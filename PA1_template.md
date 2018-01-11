@@ -115,7 +115,7 @@ median.clean.daily # display result
 ```
 ## [1] 10765
 ```
-The mean and median steps taken daily are respectively, 1.0766189\times 10^{4} and 10765.
+The mean and median steps taken daily are respectively, 10766 and 10765.
 
 ## What is the average daily activity pattern?
 Next we make a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis).
@@ -158,7 +158,9 @@ g # display graph
 ```
 
 ![](PA1_template_files/figure-html/graph_activity-1.png)<!-- -->
+
 Determination of Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps is shown in next:
+
 
 ```r
 interval.with.max.mean <- mean.interval %>%  # recall that this is the tibble with mean per interval accross all days
@@ -205,7 +207,9 @@ glimpse(data.imputed) # display tibble with imputed values
 ## $ date     <fctr> 2012-10-01, 2012-10-02, 2012-10-03, 2012-10-04, 2012...
 ## $ interval <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,...
 ```
+
 Fourth, a histogram of sum of steps taken per day with data with imputed values is created and shown below:
+
 
 ```r
 # First get sum  of steps by date
@@ -260,7 +264,7 @@ median.imputed.daily # display result
 ## [1] 10766.19
 ```
 
-The mean and median are respectively 10766.19 and 10766.19.
+The mean and median are respectively 10766 and 10766.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 In this subsection, first, create an indicator for week-ends (again, using dplyr)
@@ -285,7 +289,8 @@ glimpse(data.imputed.new) # display tibble of imputed data
 ## $ interval     <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0...
 ## $ dayindicator <fctr> weekday, weekday, weekday, weekday, weekday, wee...
 ```
-Next a panel plot containing a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis) is created like so:
+
+Finally, a panel plot containing a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis) is created like so:
     
 
 ```r
